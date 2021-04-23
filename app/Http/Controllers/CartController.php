@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Opinion;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
 class CartController extends Controller
 {
+
     public function changeToRu(){
         session()->put('locale', 'ru');
         return back();
@@ -20,7 +23,9 @@ class CartController extends Controller
     public function shop()
     {
         $products = Product::all();
-        return view('shop')->with(['products' => $products]);
+        $users=User::all();
+        $opinions=Opinion::orderBy("date")->get()->reverse();
+        return view('shop')->with(['products' => $products,'users'=>$users,'opinions'=>$opinions]);
 
     }
     public function cart()  {
