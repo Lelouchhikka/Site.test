@@ -14,7 +14,18 @@
 <div id="app">
     @include('partials.navbar')
     <main class="py-4">
-        @yield('content')
+            <div class="row">
+                <div class="col">
+                    @yield('contentLeft')
+                </div>
+                <div class="col-6">
+                    @yield('contentMid')
+                </div>
+                <div class="col">
+                    @yield('contentRight')
+                </div>
+        </div>
+
     </main>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
