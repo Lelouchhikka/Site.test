@@ -15,13 +15,13 @@
     @include('partials.navbar')
     <main class="py-4">
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                     @yield('contentLeft')
                 </div>
                 <div class="col-6">
                     @yield('contentMid')
                 </div>
-                <div class="col">
+                <div class="col-3">
                     @yield('contentRight')
                 </div>
         </div>

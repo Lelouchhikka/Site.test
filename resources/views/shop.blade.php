@@ -50,4 +50,47 @@
 @section('contentMid')
 @endsection
 @section('contentLeft')
+     <div class="container" style="margin-top: 80px">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 " >
+                <div class="row border">
+                    <div class="col  border-bottom " >
+                        
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Halyk Stars</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Halyk News</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Halyk Команда</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Halyk Book</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Сервисы</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Обучение</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                        <a style="font-size: 25px" href="#">+</a>
+                        <a href="#">Афиша</a>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center" style="margin: 25px">
+                            <span>Телефон доверия</span>
+                            <span>999 999 999 99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
