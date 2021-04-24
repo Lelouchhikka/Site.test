@@ -6,8 +6,10 @@ use App\Models\Category;
 use App\Models\Opinion;
 use App\Models\Product;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use phpDocumentor\Reflection\Types\Array_;
 
 class CartController extends Controller
 {
@@ -25,7 +27,19 @@ class CartController extends Controller
         $products = Product::all();
         $users=User::all();
         $opinions=Opinion::orderBy("date")->get()->reverse();
-        return view('shop')->with(['products' => $products,'users'=>$users,'opinions'=>$opinions]);
+        $month=Carbon::today()->month;
+        $BDUsers= array();
+        foreach ($users as $user){
+            if(Carbon::parse($user->BirthDay)->month == $month){
+                array_push($BDUsers,$user);
+            }
+
+    }
+        foreach ($BDUsers as $user){
+            $dt=Carbon::create($user->BirthDay);
+            $user->BirthDay=$dt->format("d F");
+        }
+        return view('shop')->with(['products' => $products,'BDUsers'=>$BDUsers,'opinions'=>$opinions]);
 
     }
     public function cart()  {
