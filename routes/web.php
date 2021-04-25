@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
 use mysql_xdevapi\Session;
 
@@ -35,5 +38,9 @@ Route::get('/category/id',[CategoryController::class,'getCategory'])->name('cate
 Route::get('/brand',[BrandController::class,'brand'])->name('brand.list');
 Route::get('/brand/id',[BrandController::class,'getBrand'])->name('brand.chosed');
 
-
+Route::resource('news', NewsController::class)->middleware('auth');
+Route::resource('vacancy', VacancyController::class)->middleware('auth');
+Route::resource('banner', BannerController::class)->middleware('auth');
+Route::put('news/{item}/removeImage', [NewsController::class, 'removeImage'])
+    ->name('news.removeImage');
 
